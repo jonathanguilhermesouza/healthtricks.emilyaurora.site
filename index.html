@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Blog Emily Aurora - Purple honey</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Intro settings -->
+  <style>
+    body {
+      color: rgb(45, 45, 45);
+    }
+
+    @media (max-width: 600px) {
+      .headline-size {
+        font-size: 25px;
+        line-height: 43px;
+      }
+
+      .description-size {
+        font-size: 24px;
+      }
+    }
+
+    @media (min-width: 600px) {
+      .headline-size {
+        font-size: 48px;
+        line-height: 70px;
+      }
+
+      .description-size {
+        font-size: 24px;
+      }
+
+      .mt-not-mobile {
+        margin-top: 50px !important;
+      }
+    }
+
+    .animated {
+      animation-duration: 2s;
+      animation-fill-mode: both
+    }
+
+    .animated.infinite {
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes swing {
+      20% {
+        transform: rotate(5deg)
+      }
+
+      40% {
+        transform: rotate(-5deg)
+      }
+
+      to {
+        transform: rotate(0deg)
+      }
+    }
+
+    .btn-swing {
+      transform-origin: top center;
+      animation-name: swing
+    }
+  </style>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      // Obter todos os parâmetros da URL
+      var queryParams = window.location.search.substring(1).split("&");
+      var params = {};
+      for (var i = 0; i < queryParams.length; i++) {
+        var pair = queryParams[i].split("=");
+        params[pair[0]] = decodeURIComponent(pair[1]);
+      }
+
+      // Localizar todos os botões e links de ação na página
+      var buttonsAndLinks = document.querySelectorAll('button:not([href^=\"#\"]), a:not([href^=\"#\"])');
+
+      // Inserir os parâmetros da URL em cada botão ou link de ação encontrado
+      for (var i = 0; i < buttonsAndLinks.length; i++) {
+        var buttonOrLink = buttonsAndLinks[i];
+        var href = buttonOrLink.getAttribute('href');
+        var buttonData = buttonOrLink.dataset;
+        if (href) {
+          // Adicionar os parâmetros da URL à URL atual do link
+          var newHref = href;
+          if (newHref.indexOf('?') > -1) {
+            newHref += '&';
+          } else {
+            newHref += '?';
+          }
+          for (var key in params) {
+            newHref += key + '=' + encodeURIComponent(params[key]) + '&';
+          }
+          newHref = newHref.slice(0, -1); // remover o último \"&\"
+          buttonOrLink.setAttribute('href', newHref);
+        }
+        if (buttonData) {
+          // Adicionar os parâmetros da URL como data-* attributes do botão
+          for (var key in params) {
+            buttonOrLink.dataset[key] = params[key];
+          }
+        }
+      }
+    });
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '108114239014783');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=108114239014783&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body style="overflow-x: hidden;">
+  <div class="row text-center">
+    <div class="bg-success text-white p-2">
+      
+      <h5><img src="./img/health-life.png" height="50px">My Transformation Story</h5>
+    </div>
+    <div class="col-md-10 offset-md-1 col-sm-12">
+
+
+
+
+
+      <!-- Jumbotron -->
+      <div class="p-2 text-center bg-light">
+        <div class="row">
+
+          <div class="col-md-12">
+            <h1 class="headline-size">
+              Discover how <span style="color: #27d005; padding: 5px; font-style: italic;"><strong> Some Ingredients </strong></span> unlocked enzymes <br />in my body and accelerated my metabolism.
+            </h1>
+            <h2 style="color: rgb(96, 96, 96)">This took me from 275 to 125 in a few weeks...</h2>
+          </div>
+
+          <div class="col-md-4 p-3 text-center description-size mt-not-mobile">
+            <img src="./img/emily-after.jpg" class="w-100">
+            <p>New Me ❤️</p>
+          </div>
+          <div class="col-md-8 p-3 description-size mt-not-mobile" style="text-align: left;">
+            <p>My name is Emily and I recently came across a way to get my old self back...</p>
+            <p>A few years ago I saw some posts on Facebook, I even read the contents of some blogs, there were several beautiful stories, but I ended up ignoring them all and not paying attention to myself.<br />
+            <p><b>I decided not to follow any advice, from any blog, and my end was almost tragic.</b></p>
+            <p>If I took into account everything I learned reading, maybe I wouldn't have gone through difficult times.</p>
+            <p><b>So don't ignore it, because you could be in serious trouble like I was.</b></p>
+          </div>
+        </div>
+      </div>
+      <!-- Jumbotron -->
+      <!--Main Navigation-->
+
+      <!--Main layout-->
+      <div class="col-md-12 text-center">
+        <div class="bg-success mb-5 mt-5">
+          <h1 class="text-light p-3">My Brief Backstory</h1>
+        </div>
+        <div class="p-2 description-size" style="text-align: left;">
+          <p>I was about 275, I knew I needed to get my size down, but I ended up ignoring it thinking nothing would happen to me.</p>
+          <br />
+          <div class="row">
+            <div class="col-md-5 offset-md-1 mb-2"><img src="./img/emily-before-1.JPG" class="w-100"/></div>
+            <div class="col-md-5 mb-2"><img src="./img/emily-before-4.JPG" class="w-100"/></div>
+          </div>
+          <br />
+          <p>
+            Until one day, I started having a lot of pain in my chest, my husband wanted to know what was going on, none of us understood what happened, until I fainted.😔  
+          </p><br/>
+          <div class="col-md-6 offset-md-3">
+            <img src="./img/emergency.jpg" class="w-100">
+          </div>
+          <br />
+          
+          <p>I almost went to heaven. </p><br />
+          <p>My husband immediately called the hospital, who rescued me, I was having a heart attack, I was hospitalized for a few days but in the end everything worked out and I didn't have a tragic end. </p>
+          <br />
+          <p>My doctor said that if I continued with the food routine I had, it wouldn't last another 6 months. </p>
+        </div>
+
+
+        <div class="bg-success mt-5 mb-5">
+          <h1 class="text-light p-3">The Only problem was...</h1>
+        </div>
+        <div class="p-3 description-size" style="text-align: left;">
+          <div class="row">
+            <div class="col-md-12">
+              <p>When my doctor sent me home with instructions for a new diet, I followed them religiously. </p><br />
+              <p>Nothing changed. </p><br />
+              <p>So then I joined a local gym for “active adults”...which only left me sore, sweaty, and exhausted with ZERO change in the numbers. </p><br />
+              <p>Next I tried yoga…running…even spin classes...</p><br />
+              <p>And when my personal trainer said “abs are made in the kitchen” I went back to focusing on my diet.</p><br />
+              <p><b>I tried eating vegan, keto, low carb, and even intermittent fasting...</b></p><br />
+              <p>They worked for a really short time. </p><br />
+              <p><b>And the second I stopped my numbers slowly started to creep back up. They just left me even more cranky and tired.</b></p> <br />
+              <p>Working out every single day is not a sustainable way to live for me. I have a really busy life and knee pain....</p> <br />
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="bg-success mt-5 mb-5">
+          <h1 class="text-light p-3">I Was Getting Desperate and Ready to Try ANYTHING…</h1>
+        </div>
+        <div class="p-3 description-size" style="text-align: left;">
+          <div class="row">
+            <div class="col-md-12">
+              <p>And as if it was a sign from heaven, I had the weirdest encounter at the mall. </p><br />
+              <p>I saw a man and woman both about my age, and they both had their hands full of bags. Between the two of them, it looked like they’d bought an entirely new wardrobe... All for her.  </p><br />
+              <p>And I could tell she needed it, because her sundress was practically slipping off her shoulders! It was way, WAY too big on her... </p><br />
+              <p>But the strangest thing of all was that I recognized her!</p><br />
+              <p>It took me a second, but it turned out it was my old high school friend Susan… only she was literally half the woman I remembered.</p><br />
+              <p>Susan was always a sweetheart…but she was also the one to hide in the back of group photos because of her “puffiness”. </p><br />
+              <p>So to see her now, looking like a magazine model, felt like a cruel twist of fate...</p><br />
+              <p>Until she recognized me too.</p><br />
+              <p>“Elizabeth! Oh my goodness... I heard about you having a bad time. How are you holding up?”</p><br />
+              <p>As soon as I opened my mouth, the tears came pouring out. I just couldn’t keep the pain bottled in any longer.
+              </p><br />
+              <p>Thankfully, Susan and her boyfriend took me aside and helped me catch my breath. </p><br />
+              <p>And once I recapped the whole story for her, they exchanged a knowing look.</p><br />
+              <p>“What?” I asked.</p><br />
+              <p>That’s when she pulled out a piece of paper and scribbled down a website address.</p><br />
+              <p>“Just watch the video there and it will explain everything. THIS is how I was able to get a whole new wardrobe...”</p><br />
+              <p>So as soon as I got home, I watched the video like she said.</p><br />
+              <p>Not only did the video change EVERYTHING I thought I knew about health and fitness... but when I started to ingest, the enzymes started to work in order to accelerate my metabolism, I completely transformed my body!</p><br />
+              <p>From 275 down to 209…then 183…then 170…all the way down to 155...</p><br />
+              <p>According to the doctor, these enzymes that are unlocked act like thousands of ants to balance our body.</p><br />
+              <p>I was FLOORED by how fast and effective this technique was! </p><br />
+              <div class="row">
+                <div class="col-md-5 offset-md-1 mb-2"><img src="./img/emily-after-1.JPG" class="w-100"/></div>
+                <div class="col-md-5 mb-2"><img src="./img/emily-after-2.JPG" class="w-100"/></div>
+              </div>
+              <br />
+              <p><b>The video that you can watch by clicking on the button talks much better about the ingredients that unlock the burning enzymes.</b> 👇👇</p><br />
+              <br />
+              <a href="javascript:void(0)" onclick="redirectToOffer()" class="btn btn-block btn-primary btn-lg p-4 mt-4 mb-5 w-100 btn-swing animated infinite"
+                style="font-size: x-large;">CLICK HERE TO WATCH</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-success mt-5 mb-5">
+          <h1 class="text-light p-3">By Unblocking the functioning of the Enzymes Has Allowed Me To...</h1>
+        </div>
+        <div class="p-3 description-size" style="text-align: left;">
+          <div class="row">
+            <div class="col-md-12">
+              <p>✅ <b> Indulge in cookies and brownies whenever I want </b> </p>
+              <p>✅ <b> LOVE what I see in the mirror every day </b> </p>
+              <p>✅ <b> Only stay as active as I want to (pretty much just slow walks in the forest...) </b> </p>
+              <p>✅ <b> Finally get my numbers under control </b> </p>
+              <p>✅ <b> Escape the trap of endless workouts and diets that FAILED ME before... </b> </p>
+              <br />
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-success mt-5 mb-5">
+          <h1 class="text-light p-3">Can it Work for You Too?</h1>
+        </div>
+        <div class="p-3 description-size" style="text-align: left;">
+          <div class="row">
+            <div class="col-md-12">
+              <p>There’s only one way to find out for sure…but I can tell you this:
+              </p><br />
+              <p>At first, I was really skeptical too because I had already tried out so many different things to get my weight in check, but this method turned out to be the real deal - the only one that actually worked for me!
+              </p><br />
+              <p><b>It is NOT our fault that we are skeptical, experience makes us want to raise an eyebrow and just walk away. I thought about it. But something told me to go ahead and try it. SO GLAD I DID.</b> </p><br />
+              <p>You can feel healthier, fitter, (and even sexier!) than you have ever felt in your life. There is beauty in each and everyone of us, no matter what shape we take. But this shape, the healthier one, really looks fantastic on me! </p><br />
+            </div>
+          </div>
+        </div>
+
+
+        <div class="bg-success mt-5 mb-5">
+          <h1 class="text-light p-3">What Are You Waiting For? We Have One Life, Live it!</h1>
+        </div>
+        <div class="p-3 description-size" style="text-align: left;">
+          <div class="row">
+            <div class="col-md-12">
+              <p>I have been sharing this story with my friends that have struggled over the years like I have.
+              </p><br />
+              <p><b>If you're dealing with the same issues I was, I hope you will invest the time to watch the video. It transformed me, it might be able to transform you.
+              </b></p><br />
+              <p>Being 53, I'm like a new woman now, young, hot and vibrant, rejuvenated, that is the right word...rejuvenated.</p><br />
+              <p>I hope I have inspired you with my story. So you start a transformational journey that will change your life.</p><br />
+              <p>But last time I checked it was still up ... <b> Check it out for yourself</b> 👇 </p><br />
+              <a href="javascript:void(0)" onclick="redirectToOffer()">
+                <img src="./img/cta-hb.gif" class="w-100">
+              </a>
+              <a href="javascript:void(0)" onclick="redirectToOffer()" class="btn btn-block btn-primary btn-lg p-4 mt-4 mb-5 w-100 btn-swing animated infinite"
+                style="font-size: x-large;">CLICK HERE TO WATCH</a>
+              <img src="./img/ref-logo.png" class="d-none d-md-block" />
+              <img src="./img/AS-SEEN-ON-1-.jpg" class="w-100 d-block d-md-none" />
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-md-12">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="row mt-5">
+          <div class="col-md-12 text-center">
+            <h3>Information</h3>
+            <ul style="list-style: none;" class="p-0">
+              <li><a href="./privacy-policy">Privacy Policy</a></li>
+              <li><a href="./terms-of-service">Term of Service</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <p>
+              Copyright 2023 - Purple Honey Burn - All Rights Reserved <br />
+              This site is not a part of the Facebook website or Facebook Inc. <br />
+              Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
+              <br />
+            </p>
+            <p class="mt-3" style="font-size: x-small;">
+              FDA Compliance <br />
+              The information on this website has not been evaluated by the Food & Drug Administration or any other
+              medical body. We do not aim to diagnose, treat, cure or prevent any illness or disease. Information is
+              shared for educational purposes only. <br />
+              You should always consult your doctor before acting on any content on this website, especially if you are
+              pregnant, nursing, taking medication or have a medical condition.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      function redirectToOffer()
+      {
+        fetch('https://funnel-purplehoneyburn.emilyaurora.site');
+        setTimeout(function()
+        {
+          window.location.href = "https://hop.clickbank.net/?affiliate=jongss&vendor=honeyburn&cbpage=tsl&affop=1";
+        }, 100)
+
+      }
+    </script>
+</body>
+</html>
